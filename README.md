@@ -2,7 +2,6 @@
 
 Replacing **North Nord Tech**.
 
-Short, clean, no-nonsense. Same gig, better name.
 
 ## Status
 🚧 Early setup — domain, email, and site coming soon.
