@@ -1,0 +1,345 @@
+/* =============================
+   Noltec — Resume Page
+   ============================= */
+
+/* ── RESUME HEADER ── */
+.resume-header-wrap {
+  padding-top: 6rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+/* subtle glow behind header */
+.resume-header-wrap::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,240,77,0.06) 0%, transparent 70%);
+  top: 0;
+  right: -10%;
+  pointer-events: none;
+}
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+  padding: 3rem 0 3rem;
+}
+
+.rh-name {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.rh-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.rh-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.rh-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.rh-contact span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.rh-contact svg {
+  width: 13px;
+  height: 13px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.rh-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.rh-actions .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.rh-actions .btn-primary svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ── NAV ACTIVE STATE ── */
+.nav-active {
+  color: var(--white) !important;
+}
+
+/* ── RESUME BODY ── */
+.resume-body {
+  padding: 4rem 0 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* ── SECTION HEADINGS ── */
+.rs {
+  margin-bottom: 3rem;
+}
+
+.rs:last-child {
+  margin-bottom: 0;
+}
+
+.rs-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.rs-heading svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* ── EXPERIENCE ── */
+.job {
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.job:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* accent left bar */
+.job::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 0.35rem;
+  width: 2px;
+  height: calc(100% - 0.35rem);
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  border-radius: 2px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.job-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.job-org {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.job-date {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(196,240,77,0.14);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.job-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.job-bullets li {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.job-bullets li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+/* ── SIDEBAR: SKILLS ── */
+.resume-sidebar {
+  position: sticky;
+  top: 6rem;
+}
+
+.skill-group {
+  margin-bottom: 1.25rem;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-group-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ── SIDEBAR: EDUCATION ── */
+.edu-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.edu-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.edu-school {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.edu-degree {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.edu-credential {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(196,240,77,0.14);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .rh-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .resume-sidebar {
+    position: static;
+    border-top: 1px solid var(--border);
+    padding-top: 3rem;
+    margin-top: 0.5rem;
+  }
+
+  .job::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .rh-contact {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .job-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rh-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
