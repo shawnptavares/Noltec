@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: < · > -->
+  <polyline points="28,10 10,40 28,70" fill="none" stroke="#0a0a0a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="45" cy="40" r="5.5" fill="#c4f04d"/>
+  <polyline points="62,10 80,40 62,70" fill="none" stroke="#0a0a0a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark -->
+  <text x="102" y="56" font-family="'Instrument Serif', Georgia, serif" font-size="50" fill="#0a0a0a">noltec<tspan fill="#c4f04d">.</tspan></text>
+</svg>
