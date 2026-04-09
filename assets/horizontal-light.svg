@@ -3,6 +3,6 @@
   <polyline points="28,10 10,40 28,70" fill="none" stroke="#0a0a0a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="45" cy="40" r="5.5" fill="#c4f04d"/>
   <polyline points="62,10 80,40 62,70" fill="none" stroke="#0a0a0a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Wordmark -->
-  <text x="102" y="56" font-family="'Instrument Serif', Georgia, serif" font-size="50" fill="#0a0a0a">noltec<tspan fill="#c4f04d">.</tspan></text>
+  <!-- Wordmark — using Arial for email client compatibility -->
+  <text x="102" y="56" font-family="Arial, Helvetica, sans-serif" font-size="48" fill="#0a0a0a">noltec<tspan fill="#c4f04d">.</tspan></text>
 </svg>
