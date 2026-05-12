@@ -1,282 +1,651 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noltec — Tech Consulting</title>
-  <meta name="description" content="Noltec builds systems that work. Azure, Microsoft 365, PowerShell automation, and security hardening for organizations that don't have time for guesswork.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noltec — Cloud Infrastructure & Security</title>
+  <meta name="description" content="Noltec is the practice of Shawn Tavares — a systems engineer building cloud infrastructure and endpoint security for organizations that need it done right." />
+  <meta name="theme-color" content="#0B1120" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bg:       '#0B1120',
+            surface:  '#111827',
+            surface2: '#0F172A',
+            line:     'rgba(148, 163, 184, 0.12)',
+            ink:      '#E5E7EB',
+            muted:    '#94A3B8',
+            primary:  '#3B82F6',
+            accent:   '#22D3EE',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          letterSpacing: {
+            tightest: '-0.045em',
+          },
+          maxWidth: {
+            container: '1200px',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 </head>
-<body>
+<body class="bg-bg text-ink font-sans antialiased selection:bg-primary/30 selection:text-white">
 
-<!-- Nav -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="logo">noltec<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-    </ul>
-    <button class="hamburger" id="ham" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- Background ambient gradient -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 h-[600px] w-[1100px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"></div>
+    <div class="absolute top-[40%] -right-40 h-[500px] w-[700px] rounded-full bg-accent/10 blur-3xl"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.08),transparent_60%)]"></div>
+    <div class="absolute inset-0 grid-bg opacity-[0.35]"></div>
   </div>
-</nav>
 
-<div class="mobile-menu" id="mob">
-  <a href="#services">Services</a>
-  <a href="#about">About</a>
-  <a href="resume.html">Resume</a>
-  <a href="#contact">Get in Touch</a>
-</div>
+  <!-- Navigation -->
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-container px-6">
+      <nav class="mt-4 flex items-center justify-between rounded-2xl border border-line bg-bg/60 px-5 py-3 backdrop-blur-xl">
+        <a href="#top" class="group flex items-center gap-2 font-semibold tracking-tight">
+          <span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-bg">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </span>
+          <span>noltec<span class="text-primary">.</span></span>
+        </a>
 
-<!-- Hero -->
-<section id="hero">
-  <div class="wrapper">
-    <div class="hero">
-      <div class="hero-content">
-        <h1>We build the<br>systems you<br><em>actually</em> need.</h1>
-        <p class="hero-sub">
-          Azure and Microsoft 365 consulting for organizations that need things
-          done right the first time — cloud infrastructure, endpoint management,
-          and security hardening from someone who's run these systems in production.
-        </p>
-        <div class="hero-actions">
-          <a href="#services" class="btn-primary">
-            See what we do
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <ul class="hidden items-center gap-8 text-sm text-muted md:flex">
+          <li><a class="nav-link" href="#work">Work</a></li>
+          <li><a class="nav-link" href="#stack">Stack</a></li>
+          <li><a class="nav-link" href="#focus">Focus</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="resume.html">Resume</a></li>
+        </ul>
+
+        <a href="#contact" class="hidden items-center gap-2 rounded-lg border border-line bg-surface/60 px-4 py-2 text-sm font-medium text-ink transition hover:border-primary/40 hover:bg-surface md:inline-flex">
+          Get in touch
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+
+        <button id="ham" class="md:hidden grid h-9 w-9 place-items-center rounded-lg border border-line bg-surface/60 text-ink" aria-label="Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mob" class="mx-auto mt-2 hidden max-w-container px-6 md:hidden">
+      <div class="rounded-2xl border border-line bg-surface/80 p-4 backdrop-blur-xl">
+        <a href="#work" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Work</a>
+        <a href="#stack" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Stack</a>
+        <a href="#focus" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Focus</a>
+        <a href="#experience" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Experience</a>
+        <a href="resume.html" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Resume</a>
+        <a href="#contact" class="mt-2 block rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-medium text-white">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="relative pt-40 pb-24 md:pt-48 md:pb-32">
+      <div class="mx-auto max-w-container px-6">
+        <div class="grid items-center gap-14 lg:grid-cols-12">
+
+          <div class="lg:col-span-7">
+            <div class="reveal inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 px-3 py-1 text-xs font-medium text-muted backdrop-blur">
+              <span class="relative flex h-1.5 w-1.5">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+                <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent"></span>
+              </span>
+              Available for cloud &amp; security engagements — Q3 2026
+            </div>
+
+            <h1 class="reveal mt-8 font-sans text-5xl font-semibold leading-[1.02] tracking-tightest text-ink md:text-7xl">
+              Cloud infrastructure,<br />
+              <span class="bg-gradient-to-r from-ink via-ink to-muted bg-clip-text text-transparent">engineered to last.</span>
+            </h1>
+
+            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-muted">
+              I'm <span class="text-ink">Shawn Tavares</span> — a systems engineer
+              building Azure, endpoint, and identity platforms for organizations
+              that need them to actually work. Now extending into cloud consulting
+              and cybersecurity.
+            </p>
+
+            <div class="reveal mt-10 flex flex-wrap items-center gap-3">
+              <a href="#work" class="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-b from-primary to-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_0_1px_rgba(59,130,246,0.4),0_8px_24px_-12px_rgba(59,130,246,0.7)] transition hover:shadow-[0_0_0_1px_rgba(59,130,246,0.6),0_12px_36px_-12px_rgba(59,130,246,0.9)]">
+                View selected work
+                <svg class="transition group-hover:translate-x-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a href="#contact" class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface/60 px-5 py-3 text-sm font-medium text-ink backdrop-blur transition hover:border-primary/40 hover:bg-surface">
+                Start a conversation
+              </a>
+            </div>
+
+            <div class="reveal mt-14 grid max-w-lg grid-cols-3 gap-8 border-t border-line pt-8">
+              <div>
+                <div class="font-mono text-3xl font-medium text-ink">10<span class="text-primary">+</span></div>
+                <div class="mt-1 text-xs uppercase tracking-wider text-muted">Years in enterprise IT</div>
+              </div>
+              <div>
+                <div class="font-mono text-3xl font-medium text-ink">72</div>
+                <div class="mt-1 text-xs uppercase tracking-wider text-muted">Sites under management</div>
+              </div>
+              <div>
+                <div class="font-mono text-3xl font-medium text-ink">1</div>
+                <div class="mt-1 text-xs uppercase tracking-wider text-muted">Point of contact</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated infrastructure visual -->
+          <div class="reveal lg:col-span-5">
+            <div class="relative">
+              <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/20 via-transparent to-accent/20 blur-2xl"></div>
+              <div class="relative overflow-hidden rounded-2xl border border-line bg-surface/70 backdrop-blur-xl">
+                <div class="flex items-center justify-between border-b border-line px-4 py-3">
+                  <div class="flex items-center gap-1.5">
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-700"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-700"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-700"></span>
+                  </div>
+                  <span class="font-mono text-[11px] text-muted">noltec.infra · graph</span>
+                </div>
+
+                <div class="relative aspect-[5/4]">
+                  <svg viewBox="0 0 500 400" class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                      <linearGradient id="edge" x1="0" x2="1" y1="0" y2="0">
+                        <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="#22D3EE" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+                      </linearGradient>
+                      <radialGradient id="node-glow">
+                        <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.6"/>
+                        <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+                      </radialGradient>
+                    </defs>
+
+                    <!-- grid -->
+                    <g stroke="rgba(148,163,184,0.08)" stroke-width="1">
+                      <path d="M0 80 H500 M0 160 H500 M0 240 H500 M0 320 H500"/>
+                      <path d="M80 0 V400 M160 0 V400 M240 0 V400 M320 0 V400 M400 0 V400"/>
+                    </g>
+
+                    <!-- edges -->
+                    <g stroke="rgba(59,130,246,0.35)" stroke-width="1.2" fill="none">
+                      <path d="M250 80 L120 200" />
+                      <path d="M250 80 L380 200" />
+                      <path d="M120 200 L250 320" />
+                      <path d="M380 200 L250 320" />
+                      <path d="M250 80 L250 320" stroke-dasharray="3 4" />
+                    </g>
+
+                    <!-- animated pulse along edges -->
+                    <circle r="3" fill="#22D3EE">
+                      <animateMotion dur="3.2s" repeatCount="indefinite" path="M250 80 L120 200" />
+                    </circle>
+                    <circle r="3" fill="#22D3EE">
+                      <animateMotion dur="4s" repeatCount="indefinite" path="M250 80 L380 200" begin="0.6s" />
+                    </circle>
+                    <circle r="3" fill="#3B82F6">
+                      <animateMotion dur="3.6s" repeatCount="indefinite" path="M120 200 L250 320" begin="1.2s" />
+                    </circle>
+                    <circle r="3" fill="#3B82F6">
+                      <animateMotion dur="3.6s" repeatCount="indefinite" path="M380 200 L250 320" begin="0.4s" />
+                    </circle>
+
+                    <!-- nodes -->
+                    <g>
+                      <circle cx="250" cy="80"  r="22" fill="url(#node-glow)"/>
+                      <circle cx="120" cy="200" r="22" fill="url(#node-glow)"/>
+                      <circle cx="380" cy="200" r="22" fill="url(#node-glow)"/>
+                      <circle cx="250" cy="320" r="22" fill="url(#node-glow)"/>
+                    </g>
+
+                    <g>
+                      <rect x="232" y="62"  width="36" height="36" rx="8" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+                      <rect x="102" y="182" width="36" height="36" rx="8" fill="#0F172A" stroke="#22D3EE" stroke-width="1.2"/>
+                      <rect x="362" y="182" width="36" height="36" rx="8" fill="#0F172A" stroke="#22D3EE" stroke-width="1.2"/>
+                      <rect x="232" y="302" width="36" height="36" rx="8" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+                    </g>
+
+                    <!-- labels -->
+                    <g font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">
+                      <text x="250" y="46" text-anchor="middle">Entra ID</text>
+                      <text x="120" y="170" text-anchor="middle">Intune</text>
+                      <text x="380" y="170" text-anchor="middle">Azure</text>
+                      <text x="250" y="362" text-anchor="middle">Endpoints</text>
+                    </g>
+
+                    <!-- node icons -->
+                    <g stroke="#E5E7EB" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <g transform="translate(238 68)"><path d="M14 16a4 4 0 1 0 0-8 5 5 0 0 0-9.6-1.5A4 4 0 0 0 5 16h9z"/></g>
+                      <g transform="translate(108 188)"><rect x="2" y="3" width="16" height="12" rx="2"/><path d="M8 21h4M6 17h8"/></g>
+                      <g transform="translate(368 188)"><path d="M3 12 12 3l9 9-9 9z"/></g>
+                      <g transform="translate(238 308)"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M2 9h16"/></g>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="grid grid-cols-3 gap-px border-t border-line bg-line text-xs">
+                  <div class="bg-surface px-4 py-3"><div class="font-mono text-muted">region</div><div class="mt-0.5 text-ink">canadacentral</div></div>
+                  <div class="bg-surface px-4 py-3"><div class="font-mono text-muted">status</div><div class="mt-0.5 text-emerald-400">● healthy</div></div>
+                  <div class="bg-surface px-4 py-3"><div class="font-mono text-muted">uptime</div><div class="mt-0.5 text-ink">99.98%</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK MARQUEE -->
+    <section id="stack" class="border-y border-line bg-surface/40 py-12 backdrop-blur-sm">
+      <div class="mx-auto max-w-container px-6">
+        <p class="reveal text-center font-mono text-xs uppercase tracking-[0.2em] text-muted">Operating across the modern Microsoft cloud stack</p>
+        <div class="marquee mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+          <div class="marquee-track flex gap-12 font-mono text-sm text-muted">
+            <span>Azure</span><span>Azure Virtual Desktop</span><span>Intune</span><span>SCCM</span><span>PowerShell</span><span>Active Directory</span><span>VMware</span><span>Linux</span><span>Defender ATP</span><span>Entra ID</span><span>Autopilot</span><span>Cloudflare</span>
+            <span aria-hidden="true">Azure</span><span aria-hidden="true">Azure Virtual Desktop</span><span aria-hidden="true">Intune</span><span aria-hidden="true">SCCM</span><span aria-hidden="true">PowerShell</span><span aria-hidden="true">Active Directory</span><span aria-hidden="true">VMware</span><span aria-hidden="true">Linux</span><span aria-hidden="true">Defender ATP</span><span aria-hidden="true">Entra ID</span><span aria-hidden="true">Autopilot</span><span aria-hidden="true">Cloudflare</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY STACK GRID -->
+    <section class="py-28 md:py-36">
+      <div class="mx-auto max-w-container px-6">
+        <div class="grid gap-14 md:grid-cols-12">
+          <div class="md:col-span-5">
+            <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-primary">/ technologies</p>
+            <h2 class="reveal mt-4 text-4xl font-semibold leading-[1.05] tracking-tightest md:text-5xl">
+              Deep expertise across the Microsoft cloud — backed by years in production.
+            </h2>
+            <p class="reveal mt-5 max-w-md text-muted">
+              These are the platforms I've architected, migrated, hardened, and
+              maintained at scale. Not a checklist of buzzwords — actual hands-on
+              operational experience.
+            </p>
+          </div>
+
+          <div class="md:col-span-7">
+            <div class="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+                <h3 class="stack-title">Azure</h3>
+                <p class="stack-desc">IaaS, PaaS, Arc Update Management, hybrid networking, and tenant architecture.</p>
+              </div>
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                <h3 class="stack-title">Azure Virtual Desktop</h3>
+                <p class="stack-desc">AVD with Nerdio automation, Teradici integration, FSLogix profile design.</p>
+              </div>
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+                <h3 class="stack-title">Intune &amp; Autopilot</h3>
+                <p class="stack-desc">Zero-touch deployment, compliance policies, iOS/macOS device management.</p>
+              </div>
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M6 7l3 3-3 3M12 13h4"/></svg></div>
+                <h3 class="stack-title">SCCM</h3>
+                <p class="stack-desc">Task sequences, driver management, application deployment at fleet scale.</p>
+              </div>
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+                <h3 class="stack-title">PowerShell &amp; Automation</h3>
+                <p class="stack-desc">Custom modules, Graph API integrations, scheduled remediation pipelines.</p>
+              </div>
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+                <h3 class="stack-title">Linux &amp; VMware</h3>
+                <p class="stack-desc">ESXi hosts, datacenter operations, SAN, and Linux server workloads.</p>
+              </div>
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h3 class="stack-title">Active Directory</h3>
+                <p class="stack-desc">Hybrid identity, ADFS → Entra ID consolidation, GPO, PKI infrastructure.</p>
+              </div>
+              <div class="stack-cell">
+                <div class="stack-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                <h3 class="stack-title">Endpoint Security</h3>
+                <p class="stack-desc">Defender ATP, ASR rules, Netskope, Zscaler, conditional access.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section id="work" class="py-28 md:py-36">
+      <div class="mx-auto max-w-container px-6">
+        <div class="mb-16 flex items-end justify-between gap-6">
+          <div>
+            <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-primary">/ selected work</p>
+            <h2 class="reveal mt-4 text-4xl font-semibold leading-[1.05] tracking-tightest md:text-5xl">Engagements that<br/>moved the needle.</h2>
+          </div>
+          <p class="reveal hidden max-w-sm text-muted md:block">
+            A small selection of recent infrastructure and security work — measured by what changed, not what was deployed.
+          </p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-2">
+
+          <!-- Project 1 -->
+          <article class="project-card reveal">
+            <div class="project-tag"><span class="dot bg-primary"></span> Identity</div>
+            <h3 class="project-title">Cloud identity consolidation</h3>
+            <p class="project-blurb">Migrating enterprise applications and users from on-prem ADFS to Entra ID — a board-wide identity overhaul.</p>
+
+            <dl class="project-detail">
+              <div>
+                <dt>Challenge</dt>
+                <dd>Legacy ADFS infrastructure was fragile, hard to extend, and blocking modern conditional-access policies across 72 sites.</dd>
+              </div>
+              <div>
+                <dt>Solution</dt>
+                <dd>Phased migration of SaaS and internal apps to Entra ID, retiring ADFS while preserving SSO continuity and zero downtime for users.</dd>
+              </div>
+              <div>
+                <dt>Technologies</dt>
+                <dd class="font-mono text-xs">
+                  <span class="chip">Entra ID</span><span class="chip">ADFS</span><span class="chip">SAML</span><span class="chip">OIDC</span><span class="chip">Conditional Access</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>Single source of identity truth, modern conditional-access enforced org-wide, and the legacy ADFS farm fully decommissioned.</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal">
+            <div class="project-tag"><span class="dot bg-accent"></span> Security</div>
+            <h3 class="project-title">Endpoint hardening program</h3>
+            <p class="project-blurb">A full Defender-led hardening rollout including ASR rules, web-content filtering, and certificate-trust renewal.</p>
+
+            <dl class="project-detail">
+              <div>
+                <dt>Challenge</dt>
+                <dd>Endpoint posture was inconsistent, ASR was unconfigured, and the root CA was approaching expiry across all workstations and servers.</dd>
+              </div>
+              <div>
+                <dt>Solution</dt>
+                <dd>Deployed Defender ATP with tuned ASR rules and web-content indicators; renewed the Root CA and redistributed certificates fleet-wide.</dd>
+              </div>
+              <div>
+                <dt>Technologies</dt>
+                <dd class="font-mono text-xs">
+                  <span class="chip">Defender ATP</span><span class="chip">ASR</span><span class="chip">PKI</span><span class="chip">Netskope</span><span class="chip">Zscaler</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>Measurable reduction in attack surface, zero certificate-trust incidents at cutover, and an auditable security baseline.</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal">
+            <div class="project-tag"><span class="dot bg-primary"></span> Cloud Platform</div>
+            <h3 class="project-title">Azure Virtual Desktop platform</h3>
+            <p class="project-blurb">A cost-optimized AVD environment serving high-end computing needs for distributed users.</p>
+
+            <dl class="project-detail">
+              <div>
+                <dt>Challenge</dt>
+                <dd>High-spec workstations were over-provisioned and idle most of the day — a poor fit for distributed, sporadic workloads.</dd>
+              </div>
+              <div>
+                <dt>Solution</dt>
+                <dd>Designed an AVD environment with Nerdio automation, FSLogix profiles, and Teradici integration for graphics-intensive use cases.</dd>
+              </div>
+              <div>
+                <dt>Technologies</dt>
+                <dd class="font-mono text-xs">
+                  <span class="chip">AVD</span><span class="chip">Nerdio</span><span class="chip">FSLogix</span><span class="chip">Teradici</span><span class="chip">Azure</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>Compute consumed only when used; on-demand scaling replaced fixed hardware costs and freed capital for higher-value work.</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card reveal">
+            <div class="project-tag"><span class="dot bg-accent"></span> Automation</div>
+            <h3 class="project-title">Autopilot &amp; provisioning automation</h3>
+            <p class="project-blurb">PowerShell tooling that took technician device onboarding from manual to one-click.</p>
+
+            <dl class="project-detail">
+              <div>
+                <dt>Challenge</dt>
+                <dd>Onboarding new devices into Autopilot required multiple manual steps and CSV uploads — slow, error-prone, and inconsistent.</dd>
+              </div>
+              <div>
+                <dt>Solution</dt>
+                <dd>Built a custom PowerShell deployment that captures hardware hashes and uploads them into Windows Autopilot automatically.</dd>
+              </div>
+              <div>
+                <dt>Technologies</dt>
+                <dd class="font-mono text-xs">
+                  <span class="chip">PowerShell</span><span class="chip">Graph API</span><span class="chip">Autopilot</span><span class="chip">Intune</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>Device provisioning time cut dramatically; technicians enroll fleets without touching the Intune console.</dd>
+              </div>
+            </dl>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT FOCUS -->
+    <section id="focus" class="py-28 md:py-36">
+      <div class="mx-auto max-w-container px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary">/ current focus</p>
+          <h2 class="mt-4 text-4xl font-semibold leading-[1.05] tracking-tightest md:text-5xl">What I'm building toward.</h2>
+          <p class="mt-5 text-muted">
+            A decade of systems work has pulled me toward the next layer —
+            translating operational depth into consulting and security practice.
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-6 md:grid-cols-3">
+          <div class="focus-card reveal">
+            <div class="focus-num">01</div>
+            <h3 class="focus-title">Cloud consulting</h3>
+            <p class="focus-desc">Azure architecture, identity, and tenant strategy for mid-market organizations that need a real engineer, not a slide deck.</p>
+          </div>
+          <div class="focus-card reveal">
+            <div class="focus-num">02</div>
+            <h3 class="focus-title">Cybersecurity practice</h3>
+            <p class="focus-desc">Endpoint hardening, conditional access, and Defender-aligned baselines built from operational reality.</p>
+          </div>
+          <div class="focus-card reveal">
+            <div class="focus-num">03</div>
+            <h3 class="focus-title">Automation as standard</h3>
+            <p class="focus-desc">If a task happens twice, it should run itself the third time. PowerShell, Graph, and pipelines as the default delivery surface.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience" class="py-28 md:py-36">
+      <div class="mx-auto max-w-container px-6">
+        <div class="mb-16 max-w-2xl">
+          <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-primary">/ experience</p>
+          <h2 class="reveal mt-4 text-4xl font-semibold leading-[1.05] tracking-tightest md:text-5xl">A decade of running production systems.</h2>
+        </div>
+
+        <ol class="relative space-y-12 border-l border-line pl-8 md:pl-12">
+          <li class="reveal timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-meta">Oct 2022 — Present</div>
+            <h3 class="timeline-title">Systems Engineer</h3>
+            <p class="timeline-org">Greater Essex County District School Board</p>
+            <p class="timeline-desc">Leading the Azure and endpoint program — identity consolidation, Defender rollout, Arc Update Management, and PowerShell-driven automation across the fleet.</p>
+          </li>
+          <li class="reveal timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-meta">Oct 2020 — Oct 2022</div>
+            <h3 class="timeline-title">Client Systems Architect</h3>
+            <p class="timeline-org">Greater Essex County District School Board</p>
+            <p class="timeline-desc">Designed and ran the AVD platform, SCCM task sequences, Intune configuration, and ASR enforcement across 72 schools and the DR site.</p>
+          </li>
+          <li class="reveal timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-meta">Earlier</div>
+            <h3 class="timeline-title">Enterprise IT &amp; Datacenter Operations</h3>
+            <p class="timeline-org">Multi-site infrastructure</p>
+            <p class="timeline-desc">Five-plus years operating datacenter hardware, SAN, VMware, Windows Server, and Linux workloads — the foundation everything else rests on.</p>
+          </li>
+        </ol>
+
+        <div class="reveal mt-14">
+          <a href="resume.html" class="group inline-flex items-center gap-2 rounded-lg border border-line bg-surface/60 px-5 py-3 text-sm font-medium text-ink backdrop-blur transition hover:border-primary/40 hover:bg-surface">
+            Read the full resume
+            <svg class="transition group-hover:translate-x-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="#contact" class="btn-ghost">or just say hello →</a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <div class="stat-value">10<span>+</span></div>
-            <div class="stat-label">Years in IT</div>
-          </div>
-          <div>
-            <div class="stat-value">5<span>+</span></div>
-            <div class="stat-label">Datacenter Mgmt</div>
-          </div>
-          <div>
-            <div class="stat-value">1</div>
-            <div class="stat-label">Point of Contact</div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="terminal-card">
-          <div class="terminal-chrome">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="terminal-body">
-            <div class="terminal-lines">
-              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">noltec --init</span></div>
-              <div class="t-line t-out"><span class="t-check">✓</span> Azure tenant assessed</div>
-              <div class="t-line t-out"><span class="t-check">✓</span> Endpoints secured</div>
-              <div class="t-line t-out"><span class="t-check">✓</span> Automations deployed</div>
-              <div class="t-line t-out"><span class="t-check">✓</span> Systems online</div>
-              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor"></span></div>
+    <!-- GITHUB ACTIVITY -->
+    <section class="py-28 md:py-36">
+      <div class="mx-auto max-w-container px-6">
+        <div class="reveal overflow-hidden rounded-2xl border border-line bg-surface/60 backdrop-blur-xl">
+          <div class="grid gap-px bg-line md:grid-cols-12">
+            <div class="bg-surface p-8 md:col-span-7 md:p-10">
+              <div class="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.18c-3.34.72-4.04-1.4-4.04-1.4-.55-1.4-1.34-1.77-1.34-1.77-1.1-.74.08-.73.08-.73 1.2.08 1.83 1.24 1.83 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.22.69.83.57A12 12 0 0 0 12 .3"/></svg>
+                GitHub activity
+              </div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tightest md:text-4xl">Code, written in the open.</h2>
+              <p class="mt-4 max-w-md text-muted">
+                Most of my work runs in private tenants, but the patterns,
+                scripts, and tooling I build along the way live on GitHub.
+              </p>
+
+              <div class="mt-6 grid grid-cols-3 gap-4">
+                <div class="rounded-xl border border-line bg-bg/60 p-4">
+                  <div class="font-mono text-xs uppercase text-muted">Focus</div>
+                  <div class="mt-1 text-sm text-ink">PowerShell, Graph, IaC</div>
+                </div>
+                <div class="rounded-xl border border-line bg-bg/60 p-4">
+                  <div class="font-mono text-xs uppercase text-muted">Topics</div>
+                  <div class="mt-1 text-sm text-ink">Azure · Intune · M365</div>
+                </div>
+                <div class="rounded-xl border border-line bg-bg/60 p-4">
+                  <div class="font-mono text-xs uppercase text-muted">Cadence</div>
+                  <div class="mt-1 text-sm text-ink">Continuous</div>
+                </div>
+              </div>
+
+              <a href="https://github.com/shawnptavares" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 rounded-lg bg-gradient-to-b from-primary to-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_0_1px_rgba(59,130,246,0.4),0_8px_24px_-12px_rgba(59,130,246,0.7)] transition hover:shadow-[0_0_0_1px_rgba(59,130,246,0.6),0_12px_36px_-12px_rgba(59,130,246,0.9)]">
+                Visit @shawnptavares
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+
+            <div class="bg-surface2 p-8 md:col-span-5 md:p-10">
+              <div class="font-mono text-xs uppercase tracking-[0.2em] text-muted">contribution graph</div>
+              <div class="mt-4 grid grid-cols-[repeat(20,minmax(0,1fr))] gap-1" id="contrib-graph"></div>
+              <div class="mt-4 flex items-center justify-between text-[11px] font-mono text-muted">
+                <span>less</span>
+                <div class="flex items-center gap-1">
+                  <span class="h-2.5 w-2.5 rounded-sm bg-bg ring-1 ring-line"></span>
+                  <span class="h-2.5 w-2.5 rounded-sm bg-primary/20"></span>
+                  <span class="h-2.5 w-2.5 rounded-sm bg-primary/45"></span>
+                  <span class="h-2.5 w-2.5 rounded-sm bg-primary/70"></span>
+                  <span class="h-2.5 w-2.5 rounded-sm bg-accent"></span>
+                </div>
+                <span>more</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Marquee -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Azure</span>
-    <span>Microsoft 365</span>
-    <span>Entra ID</span>
-    <span>Intune</span>
-    <span>PowerShell</span>
-    <span>Azure Virtual Desktop</span>
-    <span>Defender ATP</span>
-    <span>Active Directory</span>
-    <span>Autopilot</span>
-    <span>Cloudflare</span>
-    <span>GitHub</span>
-    <span>SCCM</span>
-    <span>Azure</span>
-    <span>Microsoft 365</span>
-    <span>Entra ID</span>
-    <span>Intune</span>
-    <span>PowerShell</span>
-    <span>Azure Virtual Desktop</span>
-    <span>Defender ATP</span>
-    <span>Active Directory</span>
-    <span>Autopilot</span>
-    <span>Cloudflare</span>
-    <span>GitHub</span>
-    <span>SCCM</span>
-  </div>
-</div>
+    <!-- CONTACT / CTA -->
+    <section id="contact" class="py-28 md:py-36">
+      <div class="mx-auto max-w-container px-6">
+        <div class="reveal relative overflow-hidden rounded-3xl border border-line bg-surface/60 p-10 backdrop-blur-xl md:p-16">
+          <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.12),transparent_60%),radial-gradient(circle_at_80%_80%,rgba(59,130,246,0.15),transparent_60%)]"></div>
 
-<!-- Services -->
-<section id="services">
-  <div class="wrapper">
-    <div class="services">
-      <p class="section-label reveal">What we do</p>
-      <h2 class="section-heading reveal">Less mess,<br><em>more momentum.</em></h2>
-      <p class="section-sub reveal">Three things, done well. We don't try to be everything — we just make sure the things you rely on actually work.</p>
-
-      <div class="services-grid reveal">
-        <div class="service-card">
-          <div class="service-icon">
-            <i data-lucide="cloud"></i>
-          </div>
-          <h3>Microsoft 365 & Azure</h3>
-          <p>Entra ID, Intune, Azure Virtual Desktop, hybrid identity — set up correctly the first time. Whether you're migrating from on-prem AD, tightening your M365 tenant, or standing up AVD, you get someone who's done it at scale.</p>
-          <div class="pill-row">
-            <span class="pill">Entra ID</span>
-            <span class="pill">Azure</span>
-            <span class="pill">Intune</span>
-            <span class="pill">M365</span>
-            <span class="pill">AVD</span>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i data-lucide="terminal"></i>
-          </div>
-          <h3>PowerShell & Automation</h3>
-          <p>If you're clicking through the same console screens every week, that's a script. Custom PowerShell for Autopilot enrollments, security remediations, application deployments, or whatever repetitive task is eating your team's time.</p>
-          <div class="pill-row">
-            <span class="pill">PowerShell</span>
-            <span class="pill">Autopilot</span>
-            <span class="pill">SCCM</span>
-            <span class="pill">APIs</span>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i data-lucide="shield-check"></i>
-          </div>
-          <h3>Security & Hardening</h3>
-          <p>Defender ATP, ASR rules, certificate infrastructure, zero trust configuration — real security work, not a checkbox exercise. If something slipped through an audit or you need to lock things down the right way, this is the work.</p>
-          <div class="pill-row">
-            <span class="pill">Defender ATP</span>
-            <span class="pill">ASR Rules</span>
-            <span class="pill">PKI</span>
-            <span class="pill">Conditional Access</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="cta-banner reveal">
-        <p>Also help with <strong>workflow platforms</strong> (Monday.com, Notion, Airtable) and <strong>tool selection</strong> — available for project-based work and ongoing retainers.</p>
-        <a href="#contact">Let's Talk →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="wrapper">
-    <div class="about">
-      <p class="section-label reveal">About</p>
-      <h2 class="section-heading reveal">One person.<br><em>No layers.</em></h2>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            Noltec is the practice of <strong>Shawn Tavares</strong> — a systems engineer in Ontario, Canada with over a decade in enterprise IT, including five years running full datacenter operations.
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary">/ contact</p>
+          <h2 class="mt-4 max-w-2xl text-4xl font-semibold leading-[1.05] tracking-tightest md:text-6xl">
+            Have a system that needs to <em class="not-italic text-muted">actually work?</em>
+          </h2>
+          <p class="mt-6 max-w-xl text-muted">
+            No forms. No chatbots. No discovery-call funnel. Send an email and you'll
+            get a reply from the person who'd be doing the work.
           </p>
-          <p>
-            When you work with Noltec, you work with me directly. No account managers, no handoffs, no "let me check with the team." I scope the work, I do the work, and I answer the phone when something breaks.
-          </p>
-          <p>
-            Whether it's migrating your org to Entra ID, writing automation to replace a manual process, or locking down an M365 tenant that's never been properly hardened — you get someone who's been in the trenches, not someone reading from a playbook.
-          </p>
-        </div>
 
-        <div class="tools-panel reveal">
-          <div class="tools-group">
-            <div class="tools-group-label">Microsoft Cloud</div>
-            <div class="tools-list">
-              <span class="tool-tag">Azure</span>
-              <span class="tool-tag">Entra ID</span>
-              <span class="tool-tag">Microsoft 365</span>
-              <span class="tool-tag">Azure Virtual Desktop</span>
-              <span class="tool-tag">Azure Arc</span>
-            </div>
-          </div>
-          <div class="tools-group">
-            <div class="tools-group-label">Endpoint & Identity</div>
-            <div class="tools-list">
-              <span class="tool-tag">Intune</span>
-              <span class="tool-tag">Autopilot</span>
-              <span class="tool-tag">SCCM</span>
-              <span class="tool-tag">Active Directory</span>
-              <span class="tool-tag">Group Policy</span>
-            </div>
-          </div>
-          <div class="tools-group">
-            <div class="tools-group-label">Security</div>
-            <div class="tools-list">
-              <span class="tool-tag">Defender ATP</span>
-              <span class="tool-tag">ASR Rules</span>
-              <span class="tool-tag">Netskope</span>
-              <span class="tool-tag">Zscaler</span>
-              <span class="tool-tag">PKI</span>
-            </div>
-          </div>
-          <div class="tools-group">
-            <div class="tools-group-label">Automation & Dev</div>
-            <div class="tools-list">
-              <span class="tool-tag">PowerShell</span>
-              <span class="tool-tag">Python</span>
-              <span class="tool-tag">APIs</span>
-              <span class="tool-tag">Cloudflare</span>
-              <span class="tool-tag">GitHub</span>
-            </div>
+          <div class="mt-10 flex flex-wrap items-center gap-3">
+            <a href="mailto:shawn@noltec.ca" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-b from-primary to-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_0_1px_rgba(59,130,246,0.4),0_8px_24px_-12px_rgba(59,130,246,0.7)] transition hover:shadow-[0_0_0_1px_rgba(59,130,246,0.6),0_12px_36px_-12px_rgba(59,130,246,0.9)]">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              shawn@noltec.ca
+            </a>
+            <a href="https://www.linkedin.com/in/shawn-tavares-6763b8152/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface/60 px-5 py-3 text-sm font-medium text-ink backdrop-blur transition hover:border-primary/40 hover:bg-surface">
+              LinkedIn
+            </a>
+            <a href="https://github.com/shawnptavares" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface/60 px-5 py-3 text-sm font-medium text-ink backdrop-blur transition hover:border-primary/40 hover:bg-surface">
+              GitHub
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<!-- Contact -->
-<section id="contact">
-  <div class="wrapper">
-    <div class="contact">
-      <p class="section-label reveal">Contact</p>
-      <h2 class="section-heading reveal">Let's work together.</h2>
-      <p class="section-sub reveal">Got a project, a mess, or just a question? No forms. No chatbots. Just send an email.</p>
-      <a href="mailto:shawn@noltec.ca" class="contact-email reveal">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        shawn@noltec.ca
-      </a>
-      <div class="contact-links reveal">
-        <a href="https://github.com/shawnptavares" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/shawn-tavares-6763b8152/" target="_blank">LinkedIn</a>
+  <!-- FOOTER -->
+  <footer class="border-t border-line py-10">
+    <div class="mx-auto flex max-w-container flex-col items-start justify-between gap-6 px-6 text-sm text-muted md:flex-row md:items-center">
+      <div class="flex items-center gap-3">
+        <span class="grid h-6 w-6 place-items-center rounded-md bg-gradient-to-br from-primary to-accent text-bg">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
+        <span>© 2026 Noltec — Shawn Tavares</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="mailto:shawn@noltec.ca" class="hover:text-ink">shawn@noltec.ca</a>
+        <a href="https://github.com/shawnptavares" target="_blank" rel="noopener" class="hover:text-ink">GitHub</a>
+        <a href="https://www.linkedin.com/in/shawn-tavares-6763b8152/" target="_blank" rel="noopener" class="hover:text-ink">LinkedIn</a>
+        <span class="inline-flex items-center gap-1.5">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ontario, Canada
+        </span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<div class="wrapper">
-  <footer>
-    <span>© 2026 Noltec — Shawn Tavares</span>
-    <span class="loc">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-      Ontario, Canada
-    </span>
   </footer>
-</div>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
