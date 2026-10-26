@@ -1,0 +1,16 @@
+{
+  "name": "Noltec",
+  "short_name": "Noltec",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#08090A",
+  "theme_color": "#08090A",
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
