@@ -1,0 +1,5 @@
+lucide-static 1.61.0
+https://www.npmjs.com/package/lucide-static/v/1.61.0
+https://github.com/lucide-icons/lucide
+Files are byte-identical copies of lucide-static/icons/*.svg. On the site they are rendered at 13-18 px with stroke-width 1.5 (set inline, file untouched).
+Used: layout-grid, fingerprint, monitor-smartphone, server, shield-check, terminal, git-branch, chevron-right, search, key-round, arrow-right, arrow-up-right, mail

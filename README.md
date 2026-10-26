@@ -1,12 +1,8 @@
 # Noltec
 
-Replacing **North Nord Tech**.
+Independent cloud infrastructure practice of Shawn Tavares. Static site for [noltec.ca](https://noltec.ca/), served by GitHub Pages from `main`.
 
-
-## Status
-🚧 Early setup — domain, email, and site coming soon.
-
-## Links
-- Domain: `noltec.ca` (pending registration)
-- Email: `@noltec.ca` (pending setup via Gmail)
-- Site: GitHub Pages (pending)
+- `index.html` — homepage (Direction D, Graphite)
+- `resume.html` — resume, with `shawn-tavares-resume.pdf`
+- `404.html`, `sitemap.xml`, `robots.txt`
+- `CNAME` — `noltec.ca` (do not change as part of a content deploy)

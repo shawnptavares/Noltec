@@ -1,273 +1,237 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume — Shawn Tavares · Noltec</title>
-  <meta name="description" content="Resume of Shawn Tavares — Systems Engineer and Azure / M365 specialist based in Ontario, Canada." />
-  <meta name="theme-color" content="#0B1120" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
-
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            bg:       '#0B1120',
-            surface:  '#111827',
-            surface2: '#0F172A',
-            line:     'rgba(148, 163, 184, 0.12)',
-            ink:      '#E5E7EB',
-            muted:    '#94A3B8',
-            primary:  '#3B82F6',
-            accent:   '#22D3EE',
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-          },
-          letterSpacing: { tightest: '-0.045em' },
-          maxWidth: { container: '1200px' },
-        },
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shawn Tavares, Systems Engineer (Azure &amp; M365) | Resume</title>
+  <meta name="description" content="Resume of Shawn Tavares, systems engineer in Leamington, Ontario. Entra ID, Intune, Azure Virtual Desktop, Defender, PKI and PowerShell automation.">
+  <link rel="canonical" href="https://noltec.ca/resume.html">
+  <meta name="theme-color" content="#08090A">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Noltec">
+  <meta property="og:url" content="https://noltec.ca/resume.html">
+  <meta property="og:title" content="Shawn Tavares, Systems Engineer (Azure &amp; M365) | Resume">
+  <meta property="og:description" content="Resume of Shawn Tavares, systems engineer in Leamington, Ontario. Entra ID, Intune, Azure Virtual Desktop, Defender, PKI and PowerShell automation.">
+  <meta property="og:image" content="https://noltec.ca/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Noltec. Cloud infrastructure, engineered to last.">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shawn Tavares, Systems Engineer (Azure &amp; M365) | Resume">
+  <meta name="twitter:description" content="Resume of Shawn Tavares, systems engineer in Leamington, Ontario. Entra ID, Intune, Azure Virtual Desktop, Defender, PKI and PowerShell automation.">
+  <meta name="twitter:image" content="https://noltec.ca/og.png">
+  <meta name="twitter:image:alt" content="Noltec. Cloud infrastructure, engineered to last.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/SchibstedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/FragmentMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://noltec.ca/resume.html#page",
+        "url": "https://noltec.ca/resume.html",
+        "name": "Shawn Tavares, Systems Engineer (Azure & M365) | Resume",
+        "mainEntity": { "@id": "https://noltec.ca/#shawn" }
       },
-    };
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://noltec.ca/#noltec",
+        "name": "Noltec",
+        "url": "https://noltec.ca/",
+        "email": "shawn@noltec.ca",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Leamington",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Windsor-Essex" },
+          "Remote"
+        ],
+        "founder": { "@id": "https://noltec.ca/#shawn" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://noltec.ca/#shawn",
+        "name": "Shawn Tavares",
+        "jobTitle": "Cloud Infrastructure & Security Engineer",
+        "email": "shawn@noltec.ca",
+        "url": "https://noltec.ca/resume.html",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Leamington",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/shawn-tavares-6763b8152/",
+          "https://github.com/shawnptavares"
+        ],
+        "worksFor": { "@id": "https://noltec.ca/#noltec" },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Niagara College",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Welland",
+            "addressRegion": "ON",
+            "addressCountry": "CA"
+          }
+        }
+      }
+    ]
+  }
   </script>
-
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/resume.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 </head>
-<body class="bg-bg text-ink font-sans antialiased selection:bg-primary/30 selection:text-white">
-
-  <!-- Background ambient gradient -->
-  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 h-[500px] w-[1000px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"></div>
-    <div class="absolute inset-0 grid-bg opacity-[0.3]"></div>
-  </div>
-
-  <!-- Navigation -->
-  <header class="fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto max-w-container px-6">
-      <nav class="mt-4 flex items-center justify-between rounded-2xl border border-line bg-bg/60 px-5 py-3 backdrop-blur-xl">
-        <a href="index.html" class="flex items-center gap-2 font-semibold tracking-tight">
-          <span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-bg">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </span>
-          <span>noltec<span class="text-primary">.</span></span>
-        </a>
-
-        <ul class="hidden items-center gap-8 text-sm text-muted md:flex">
-          <li><a class="nav-link" href="index.html#work">Work</a></li>
-          <li><a class="nav-link" href="index.html#stack">Stack</a></li>
-          <li><a class="nav-link" href="index.html#focus">Focus</a></li>
-          <li><a class="nav-link" href="index.html#experience">Experience</a></li>
-          <li><a class="nav-link is-active" href="resume.html">Resume</a></li>
-        </ul>
-
-        <a href="index.html#contact" class="hidden items-center gap-2 rounded-lg border border-line bg-surface/60 px-4 py-2 text-sm font-medium text-ink transition hover:border-primary/40 hover:bg-surface md:inline-flex">
-          Get in touch
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-
-        <button id="ham" class="md:hidden grid h-9 w-9 place-items-center rounded-lg border border-line bg-surface/60 text-ink" aria-label="Menu">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/">
+        <img src="/wordmark/noltec-light-on-dark.svg" alt="noltec" width="87" height="22">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#why">Why Noltec</a>
+        <a href="/#engagements">Engagements</a>
+        <a href="/#work">Work</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#process">Process</a>
+        <a href="/resume.html" aria-current="page">Resume</a>
       </nav>
-    </div>
-    <div id="mob" class="mx-auto mt-2 hidden max-w-container px-6 md:hidden">
-      <div class="rounded-2xl border border-line bg-surface/80 p-4 backdrop-blur-xl">
-        <a href="index.html#work" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Work</a>
-        <a href="index.html#stack" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Stack</a>
-        <a href="index.html#focus" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Focus</a>
-        <a href="index.html#experience" class="block rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-bg hover:text-ink">Experience</a>
-        <a href="resume.html" class="block rounded-lg px-3 py-2.5 text-sm text-ink">Resume</a>
-        <a href="index.html#contact" class="mt-2 block rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-medium text-white">Get in touch</a>
+      <div class="header-actions">
+        <details class="nav-more">
+          <summary>Menu</summary>
+          <div class="nav-panel">
+            <a href="/#why">Why Noltec</a>
+            <a href="/#engagements">Engagements</a>
+            <a href="/#work">Work</a>
+            <a href="/#experience">Experience</a>
+            <a href="/#process">Process</a>
+            <a href="/resume.html" aria-current="page">Resume</a>
+          </div>
+        </details>
+        <a class="btn btn-ghost head-mail" href="mailto:shawn@noltec.ca">shawn@noltec.ca</a>
+        <a class="btn btn-white head-cta" href="/#contact">Get in touch</a>
       </div>
     </div>
   </header>
 
-  <!-- Resume header -->
-  <section class="pt-40 pb-12 md:pt-48">
-    <div class="mx-auto max-w-container px-6">
-      <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+  <main id="main" class="page">
+    <article class="wrap page-narrow resume">
+      <p class="eyebrow">/ resume</p>
+      <div class="resume-top">
         <div>
-          <p class="reveal font-mono text-xs uppercase tracking-[0.2em] text-primary">/ resume</p>
-          <h1 class="reveal mt-4 text-5xl font-semibold tracking-tightest md:text-6xl">Shawn <em class="not-italic text-muted">Tavares</em></h1>
-          <p class="reveal mt-3 text-lg text-muted">Systems Engineer · Azure &amp; M365 Specialist</p>
-          <div class="reveal mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm text-muted">
-            <span class="inline-flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Leamington, Ontario
-            </span>
-            <a href="tel:5199194258" class="inline-flex items-center gap-2 hover:text-ink">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              519-919-4258
-            </a>
-            <a href="mailto:shawn@noltec.ca" class="inline-flex items-center gap-2 hover:text-ink">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              shawn@noltec.ca
-            </a>
-          </div>
+          <h1>Shawn Tavares</h1>
+          <p class="role-line">Cloud Infrastructure &amp; Security Engineer &nbsp;|&nbsp; Noltec</p>
+          <p class="who">
+            <span>Leamington, Ontario</span>
+            <span aria-hidden="true">·</span>
+            <a href="mailto:shawn@noltec.ca">shawn@noltec.ca</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://noltec.ca/">noltec.ca</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://www.linkedin.com/in/shawn-tavares-6763b8152/" rel="me noopener noreferrer">linkedin.com/in/shawn-tavares-6763b8152</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://github.com/shawnptavares" rel="me noopener noreferrer">github.com/shawnptavares</a>
+          </p>
         </div>
-        <div class="reveal flex flex-wrap gap-3">
-          <a href="ShawnTavaresResume2025.docx.pdf" download="ShawnTavares_Resume.pdf" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-b from-primary to-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_0_1px_rgba(59,130,246,0.4),0_8px_24px_-12px_rgba(59,130,246,0.7)] transition hover:shadow-[0_0_0_1px_rgba(59,130,246,0.6),0_12px_36px_-12px_rgba(59,130,246,0.9)]">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download PDF
-          </a>
-          <a href="index.html" class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface/60 px-5 py-3 text-sm font-medium text-ink backdrop-blur transition hover:border-primary/40 hover:bg-surface">
-            ← Back to site
-          </a>
+        <div class="resume-actions">
+          <a class="btn btn-white" href="/shawn-tavares-resume.pdf" type="application/pdf">Download PDF</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Resume body -->
-  <section class="py-12 md:py-16">
-    <div class="mx-auto max-w-container px-6">
-      <div class="grid gap-10 lg:grid-cols-12">
+      <section aria-labelledby="sum-title">
+        <h2 id="sum-title">Summary</h2>
+        <p class="summary">I'm an independent systems engineer based in Leamington, Ontario, serving Windsor-Essex and working remotely. I have a decade+ in IT, the last several in enterprise systems engineering, and today I manage 23,000 Windows and 8,000 iOS devices on Azure, Entra ID, Intune and Microsoft Defender for Endpoint. You work with me directly, from first call to finished build. No layers. No handoffs.</p>
+      </section>
 
-        <!-- Experience -->
-        <main class="lg:col-span-8">
-          <div class="reveal mb-8 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            Experience
-          </div>
+      <section aria-labelledby="workon-title">
+        <h2 id="workon-title">What I work on</h2>
+        <ul class="skills">
+          <li><strong>Identity &amp; access:</strong> Entra ID (Azure AD), Conditional Access, Active Directory, ADFS-to-cloud migration, enterprise applications and IdP configuration, Application Proxy</li>
+          <li><strong>Endpoint management:</strong> Microsoft Intune (configuration and compliance), Windows Autopilot, SCCM, Group Policy; Windows, iOS and macOS</li>
+          <li><strong>Security:</strong> Microsoft Defender for Endpoint, Attack Surface Reduction (ASR), web indicators, Netskope, Zscaler, PKI</li>
+          <li><strong>Azure &amp; infrastructure:</strong> Azure infrastructure, Azure Virtual Desktop, Nerdio, Teradici, Azure Arc Update Management, Azure IaaS/PaaS, Windows and Linux Server, VMware ESXi, SAN</li>
+          <li><strong>Automation:</strong> PowerShell and Microsoft Graph for deployment, remediation and day-to-day operations</li>
+        </ul>
+      </section>
 
-          <ol class="space-y-10 border-l border-line pl-8 md:pl-12">
-
-            <li class="reveal timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-meta">Oct 2022 — Present</div>
-              <h3 class="timeline-title">Systems Engineer</h3>
-              <p class="timeline-org">Greater Essex County District School Board</p>
-              <ul class="mt-5 space-y-2.5 text-muted">
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Migrated applications and users from ADFS to Azure cloud-based authentication, consolidating identity under Entra ID.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Managed Azure enterprise applications, IdP configurations, and Azure Virtual Desktop environments.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Deployed Netskope and Zscaler; implemented Microsoft Defender ATP with web-content filtering indicators and Attack Surface Reduction rules.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Renewed Root CA infrastructure and redeployed certificates across all production servers, workstations, and users.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Rolled out Azure Arc Update Management across the server fleet for automated patch compliance.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Developed custom PowerShell tooling for technicians to automatically upload hardware hashes into Windows Autopilot.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Created and managed Intune configuration and compliance policies; administered iOS and macOS device management.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-primary"></span>Automated recurring tasks via PowerShell, reducing manual effort across IT operations.</li>
-              </ul>
-            </li>
-
-            <li class="reveal timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-meta">Oct 2020 — Oct 2022</div>
-              <h3 class="timeline-title">Client Systems Architect</h3>
-              <p class="timeline-org">Greater Essex County District School Board</p>
-              <ul class="mt-5 space-y-2.5 text-muted">
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Constructed and maintained Azure Virtual Desktop as a cost-saving measure for high-end computing needs; implemented Nerdio for AVD automation and integrated Teradici.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Managed Azure AD and Active Directory; enforced Group Policy for local devices and configuration policies for Intune-managed devices.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Implemented Attack Surface Reduction rules board-wide through Microsoft Defender.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Wrote PowerShell scripts for security remediations, application deployments, and registry changes.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Built and maintained SCCM task sequences including installed applications, drivers, and Windows build management.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Maintained server hardware and services across 72 schools; assisted with SAN rebuild at the Disaster Recovery site.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Managed AirWatch MDM platform — profile building, application license management, and device restrictions.</li>
-                <li class="flex gap-3"><span class="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent"></span>Rigorous testing of cloud and local applications; created technician and end-user documentation.</li>
-              </ul>
-            </li>
-
-          </ol>
-        </main>
-
-        <!-- Skills + education -->
-        <aside class="space-y-8 lg:col-span-4">
-          <div class="reveal rounded-2xl border border-line bg-surface/60 p-6 backdrop-blur-xl">
-            <div class="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
-              Skills
+      <section aria-labelledby="exp-title">
+        <h2 id="exp-title">Experience</h2>
+        <article class="role">
+          <header class="role-h">
+            <div>
+              <h3>Systems Engineer</h3>
+              <p class="org">Greater Essex County District School Board</p>
             </div>
-
-            <div class="space-y-5 text-sm">
-              <div>
-                <div class="mb-2 font-mono text-[11px] uppercase tracking-wider text-muted">Microsoft Cloud</div>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="chip">Azure IaaS/PaaS</span><span class="chip">Entra ID</span><span class="chip">M365</span><span class="chip">AVD</span><span class="chip">Azure Arc</span><span class="chip">AWS</span>
-                </div>
-              </div>
-              <div>
-                <div class="mb-2 font-mono text-[11px] uppercase tracking-wider text-muted">Endpoint &amp; Identity</div>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="chip">Intune</span><span class="chip">Autopilot</span><span class="chip">SCCM</span><span class="chip">Active Directory</span><span class="chip">Group Policy</span><span class="chip">AirWatch</span>
-                </div>
-              </div>
-              <div>
-                <div class="mb-2 font-mono text-[11px] uppercase tracking-wider text-muted">Security</div>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="chip">Defender ATP</span><span class="chip">ASR Rules</span><span class="chip">Netskope</span><span class="chip">Zscaler</span><span class="chip">PKI</span><span class="chip">ADFS</span>
-                </div>
-              </div>
-              <div>
-                <div class="mb-2 font-mono text-[11px] uppercase tracking-wider text-muted">Automation &amp; Dev</div>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="chip">PowerShell</span><span class="chip">Python</span><span class="chip">APIs</span><span class="chip">GitHub</span>
-                </div>
-              </div>
-              <div>
-                <div class="mb-2 font-mono text-[11px] uppercase tracking-wider text-muted">Infrastructure</div>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="chip">Windows Server</span><span class="chip">Linux</span><span class="chip">VMware ESXi</span><span class="chip">SAN</span><span class="chip">Cloudflare</span><span class="chip">DNS</span>
-                </div>
-              </div>
-              <div>
-                <div class="mb-2 font-mono text-[11px] uppercase tracking-wider text-muted">Platforms</div>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="chip">Monday.com</span><span class="chip">Notion</span><span class="chip">Airtable</span><span class="chip">Power Automate</span><span class="chip">Zapier</span>
-                </div>
-              </div>
+            <p class="when">October 2022 – Present</p>
+          </header>
+          <ul>
+            <li>Manage 23,000 Windows and 8,000 iOS devices, plus macOS, with Intune configuration and compliance policies; built a PowerShell deployment that lets technicians upload hardware hashes to Autopilot automatically.</li>
+            <li>Renewed the root CAs and redeployed certificates to all production servers, workstations and users.</li>
+            <li>Implemented Microsoft Defender for Endpoint with web indicators and ASR rules; deployed Netskope and Zscaler.</li>
+            <li>Design and maintain Entra ID Conditional Access policies.</li>
+            <li>Migrated applications and users from ADFS to cloud-based authentication in Azure; built custom internal Azure applications published through Application Proxy.</li>
+            <li>Manage Azure enterprise applications, IdP and Azure Virtual Desktop configuration, and user and file share permissions.</li>
+            <li>Keep critical servers current on software and OS; rolled out Azure Arc Update Management for automated patching.</li>
+            <li>Automate Intune, Entra ID and device tasks with PowerShell and Microsoft Graph. Toolkit: <a href="https://github.com/shawnptavares/powershell-toolkit" rel="me noopener noreferrer">github.com/shawnptavares/powershell-toolkit</a></li>
+          </ul>
+        </article>
+        <article class="role">
+          <header class="role-h">
+            <div>
+              <h3>Client Systems Architect</h3>
+              <p class="org">Greater Essex County District School Board</p>
             </div>
-          </div>
+            <p class="when">October 2020 – October 2022</p>
+          </header>
+          <ul>
+            <li>Built the Azure Virtual Desktop environment in a couple of weeks and maintained it as a cost-saving option for higher-end technology needs; automated it with Nerdio and integrated Teradici with Nerdio Manager.</li>
+            <li>Implemented ASR rules board-wide through Microsoft Defender; managed Azure AD and Active Directory.</li>
+            <li>Built and tested SCCM/Intune packages for board devices; kept task sequences current (apps, drivers, Windows builds).</li>
+            <li>Managed Group Policy for on-premises devices and configuration policies for Intune devices.</li>
+            <li>Wrote PowerShell scripts for security remediations, application deployments, registry changes and more.</li>
+            <li>Maintained server hardware and services for 72 schools; assisted the Systems Engineer with the SAN rebuild at the disaster recovery site (ESXi networking and SAN).</li>
+            <li>Tested cloud and on-premises applications and assessed their value for management.</li>
+            <li>Managed PaperCut for all staff and students, including monthly allotments and adding new Xerox devices.</li>
+            <li>Wrote technician and end-user documentation; worked with the Network and Cyber Security teams.</li>
+          </ul>
+        </article>
+      </section>
 
-          <div class="reveal rounded-2xl border border-line bg-surface/60 p-6 backdrop-blur-xl">
-            <div class="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              Education
-            </div>
+      <section class="edu" aria-labelledby="edu-title">
+        <h2 id="edu-title">Education</h2>
+        <p class="school">Niagara College · Welland, Ontario</p>
+        <p>Diploma, Computer Systems Technician – Networking and Cloud Technologies · Certificate, Pre-Technology</p>
+        <p class="pursuit">In progress: Microsoft Azure Administrator (AZ-104)</p>
+      </section>
+    </article>
+  </main>
 
-            <div class="space-y-5">
-              <div>
-                <p class="text-ink">Niagara College</p>
-                <p class="mt-1 text-sm text-muted">Computer Systems Technician — Networking and Cloud Technologies</p>
-                <span class="mt-2 inline-block font-mono text-[11px] uppercase tracking-wider text-accent">Diploma</span>
-              </div>
-              <div class="border-t border-line pt-5">
-                <p class="text-ink">Niagara College</p>
-                <p class="mt-1 text-sm text-muted">Pre-Technology</p>
-                <span class="mt-2 inline-block font-mono text-[11px] uppercase tracking-wider text-accent">Certificate</span>
-              </div>
-            </div>
-          </div>
-        </aside>
-
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="wordmark sm" href="/">
+        <img src="/wordmark/noltec-light-on-dark.svg" alt="noltec" width="71" height="18">
+      </a>
+      <div class="footer-copy">
+        <p>Independent cloud infrastructure &amp; security practice. Based in Leamington, Ontario, serving Windsor-Essex and remote clients beyond.</p>
+        <p>Booking new engagements. Email for start dates.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-line py-10">
-    <div class="mx-auto flex max-w-container flex-col items-start justify-between gap-6 px-6 text-sm text-muted md:flex-row md:items-center">
-      <div class="flex items-center gap-3">
-        <span class="grid h-6 w-6 place-items-center rounded-md bg-gradient-to-br from-primary to-accent text-bg">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </span>
-        <span>© 2026 Noltec — Shawn Tavares</span>
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="mailto:shawn@noltec.ca" class="hover:text-ink">shawn@noltec.ca</a>
-        <a href="https://github.com/shawnptavares" target="_blank" rel="noopener" class="hover:text-ink">GitHub</a>
-        <a href="https://www.linkedin.com/in/shawn-tavares-6763b8152/" target="_blank" rel="noopener" class="hover:text-ink">LinkedIn</a>
+      <div class="footer-meta">
+        <p>© 2026 Noltec — Shawn Tavares</p>
+        <p><a href="https://noltec.ca/">noltec.ca</a></p>
+        <p><a href="mailto:shawn@noltec.ca">shawn@noltec.ca</a></p>
       </div>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
